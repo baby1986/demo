@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div,form,img,ul,ol,li,dl,dt,dd {margin:0; padding:0; border:0;}
+h1,h2,h3,h4,h5,h6 {margin:0; padding:0;}
+h6{font-size:12px;font-weight:normal;margin:5px auto;}
+table,td,tr,th{font-size:12px; padding:0; margin:0;}
+table{border-collapse:collapse; border:0;}
+
+body{ width:100%; margin:0; padding:0;}
+.tab_btn{margin:0 auto; padding0; width:700px;}
+.tab_btn li{float:left; list-style-type:none; height:30px; line-height:30px; margin:0 8px;}
+
+.tab_page{text-align:center;font-size:12px;width:708px; margin:0 auto;}
+.tab_page .tab_page_right{float:right;width:2px;height:24px;background:#D4D0C8 url(images/tab_page_right.png) right 3px no-repeat;}
+.tab_page .page_area{margin:0; padding:3px 0 0 0;background:#D4D0C8 url(images/tab_page_bg.png) left 3px repeat-x;height:24px;}
+.tab_page .page_area li{float:left;list-style-type:none;height:24px;line-height:24px;}
+
+.tab_page .page_area li div div{float:left;}
+.tab_page .page_area .tab_active{cursor:pointer;}
+.tab_page .page_area .tab_active .tab_left{width:2px;height:24px;background:url(images/tab_page_active_left.png) left top no-repeat;}
+.tab_page .page_area .tab_active .tab_center{height:24px;background:url(images/tab_page_active_center.png) left top repeat-x;padding:0 5px;}
+.tab_page .page_area .tab_active .tab_right{width:2px;height:24px;background:url(images/tab_page_active_right.png) left top no-repeat;}
+
+.tab_page .page_area .first_tab_normal{cursor:pointer;}
+.tab_page .page_area .first_tab_normal .tab_left{width:2px;height:24px;background:url(images/tab_page_first_normal_left.png) left top no-repeat;}
+.tab_page .page_area .first_tab_normal .tab_center{height:24px;background:url(images/tab_page_first_normal_center.png) left top repeat-x;padding:0 5px;}
+.tab_page .page_area .first_tab_normal .tab_right{width:0;height:0;background:none;}
+
+.tab_page .page_area .tab_normal{cursor:pointer;}
+.tab_page .page_area .tab_normal .tab_left{width:0;height:0;background:none;}
+.tab_page .page_area .tab_normal .tab_center{height:24px;background:url(images/tab_page_normal_center.png) left top repeat-x;padding:0 5px;}
+.tab_page .page_area .tab_normal .tab_right{width:1px;height:24px;background:url(images/tab_page_normal_right.png) left top no-repeat;}
+.content_area{clear:left;background:#9DA7C3;width:706px;height:506px;}
+
+.content_area .form_editor, .content_area .html_source, .content_area .form_power{float:left;width:700px;height:500px;display:none;text-align:left;margin:2px;}
+.content_area .html_source, .content_area .form_power{background:#fff;overflow:auto;border:1px solid #000;}
+.content_area .html_source{font-size:14px; line-height:22px;}
+.content_area .form_editor{display:block;width:683px;height:483px;}
+.content_area .has_rule{background:#fff;width:687px;height:487px; padding:15px 0 0 15px;position:relative;}
+.content_area .h_rule{position:absolute;width:684px;height:17px;left:18px;top:0;background:url(images/hRule.gif) left top repeat-x;}
+.content_area .v_rule{position:absolute;width:17px;height:484px;left:0;top:18px;background:url(images/vRule.gif) left top repeat-y;}
+</style>
+<script language="javascript" src="js/core.js"></script>
+<script language="javascript" src="js/ejs-formjslib.js"></script>
+<script language="javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/colorpicker.js"></script>
+<script type="text/javascript" src="js/eye.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
+<LINK href="ejs.css" type=text/css rel=stylesheet>
+<link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
+<link rel="stylesheet" media="screen" type="text/css" href="css/layout.css" />
+
+
+</head>
+
+<body>
+
+
+
+
+<table width="100%" height="100%" border="1">
+  <tr>
+    <td height="30px" colspan="2" style="background:#EDEDED;">
+        <div class="control_list" id="controlBar">
+            <a href="#" class="label_btn" id="label" title="label"></a>
+            <a href="#" class="singleText_btn" id="singleText" title="singleText"></a>
+            <a href="#" class="mutilText_btn" id="mutilText" title="mutilText"></a>
+            <a href="#" class="image_btn" id="image" title="image"></a>
+            <a href="#" class="button_btn" id="button" title="button"></a>
+            <a href="#" class="radioGroup_btn" id="radioGroup" title="radioGroup"></a>
+            <a href="#" class="checkboxGroup_btn" id="checkboxGroup" title="checkboxGroup"></a>
+            <a href="#" class="comboBox_btn" id="comboBox" title="comboBox"></a>
+            <a href="#" class="listBox_btn" id="listBox" title="listBox"></a>
+            <a href="#" class="form_btn" id="form" title="form"></a>
+            <a href="#" class="tabbedPane_btn" id="tabbedPane" title="tabbedPane"></a>
+            <a href="#" class="panel_btn" id="panel" title="panel"></a>
+            <a href="#" class="chart_btn" id="chart" title="chart"></a>
+            <a href="#" class="grid" id="grid" title="grid"></a>
+            <a href="#" class="placeholder" id="placeholder" title="placeholder"></a>
+            <a href="#" class="h_line" id="hLine" title="横线"></a>
+            <a href="#" class="v_line" id="vLine" title="竖线"></a>
+        </div>
+        <div class="separator"></div>
+        <div class="control_list" id="actionBar">
+            <a id="up" class="up_btn" title="上对齐"></a>
+            <a id="down" class="down_btn" title="下对齐"></a>
+            <a id="left" class="left_btn" title="左对齐"></a>
+            <a id="right" class="right_btn" title="右对齐"></a>
+            <a id="undo" class="undo_btn" title="重做"></a>
+            <a id="redo" class="redo_btn" title="恢复"></a>
+        </div>
+		<div class="separator"></div>
+		<div class="cell_size" >
+			<span>刻度：</span>
+			<select id="cellSize">
+				<option value="10" selected>小</option>
+				<option value="15">中</option>
+				<option value="20">大</option>
+                <option value="-1">无</option>
+			</select>
+		<div>
+    </td>
+  </tr>
+  <tr>
+    <td class="form_editor_area" id="form_editor_area">
+		<div class="tab_page" id="tab_page">
+			<div class="tab_page_right"></div>
+			<ul class="page_area">
+				<li class="tab_active">
+					<div>
+						<div class="tab_left"></div>
+						<div class="tab_center">表单设计</div>
+						<div class="tab_right"></div>
+					</div>
+				</li>
+				<li class="tab_normal">
+					<div>
+						<div class="tab_left"></div>
+						<div class="tab_center">HTML源码</div>
+						<div class="tab_right"></div>
+					</div>
+				</li>
+				<li class="tab_normal">
+					<div>
+						<div class="tab_left"></div>
+						<div class="tab_center">表单权限</div>
+						<div class="tab_right"></div>
+					</div>
+				</li>
+			</ul>
+			<div class="content_area">
+                
+				<div class="has_rule">
+                    <div class="form_editor" id="form_editor"></div>
+                    <div class="h_rule"></div>
+                    <div class="v_rule"></div>
+
+                </div>
+				<div class="html_source" id="html_source"></div>
+				<div class="form_power" id="form_power"></div>
+			</div>
+		</div>
+    </td>
+    <td width="220" valign="top">
+        <div id="test_table_tree" class="test_table_tree"></div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+<script>
+
+
+
+ var tableTreeObj, formEditorMain;
+var dialogObj
+function showDialog(_config){
+    if(!_config) _config = {}; 
+    EJS.extend(_config, {url : "t.html",title : "内容", dialogType:"IFRAME", width:800, height:600, isMobile:true, isModal:true, headingColumnBtnNum:3, onReady : function(){
+        var iframeTag = dialogObj.getDom().getElementsByTagName("IFRAME")[0];
+        iframeTag.contentWindow.setValue(_config.content || "");
+    }});
+    dialogObj = new EJS.Dom.dialogBox(_config);
+    dialogObj.addButton("确定",function(){
+        _config.onDone(getReturnValue());
+    });
+    dialogObj.addButton("取消",dialogObj.close);
+    dialogObj.show();
+    
+    //alert(iframeTag.tagName);
+    //iframeTag.contentWindow.returnValue("abcdefdsaf");
+}
+function hiddenDialog(){
+    dialogObj.close();
+}
+function getReturnValue(){
+    var iframeTag = dialogObj.getDom().getElementsByTagName("IFRAME")[0];
+    //alert(iframeTag.contentWindow.returnValue());
+    var rValue = iframeTag.contentWindow.returnValue();
+    return rValue;
+
+}
+
+EJS.Util.addLoadEvent( function(){
+	new TabPage({id : "tab_page"});
+    tableTreeObj = new EJS.Dom.tableTree({nodes : []});
+    tableTreeObj.paint("test_table_tree");
+    formEditorMain = new EJS.Dom.editor({width : 0, height : 0});//这里的width、height无效 
+    EJS.Dom.DomHelper.append(formEditorMain.getDom(), "form_editor");
+    
+	var feLoc = EJS.Dom.getElPos(formEditorMain.getCid());
+	formEditorMain.setOffsetLeft(feLoc.left);//查找表单设计器的横坐标并将值记录
+	formEditorMain.setOffsetTop(feLoc.top);//查找表单设计器的纵坐标并将值记录
+	formEditorMain.repaint(formEditorMain.getCid());
+	new EJS.Dom.ControlBar("controlBar");
+	new EJS.Dom.actionBar("actionBar");
+
+	var rMenu = EJS.Dom.$("form_editor");
+
+	EJS.Event.Handler.add(rMenu, "contextmenu", function(){
+		var m = new EJS.Dom.menu({left : 100, top : 100, width : 150, items : []});
+		window.event.returnValue = false
+	});
+	var cellSizeTag = EJS.Dom.$("cellSize");
+    
+    
+
+
+	EJS.Event.Handler.add(cellSizeTag, "change", function(){
+	    var sizeValue = this.options[this.selectedIndex].value;
+        if(sizeValue == -1){
+            EJS.editorConstant.isAdsorption = false;
+            rMenu.style.backgroundImage = "url(images/form_editor_bg_s.png)";
+        }else{
+            EJS.editorGlobalVariable.cellWidth = EJS.editorGlobalVariable.cellHeight = sizeValue;
+            if(sizeValue == 10){
+                rMenu.style.backgroundImage = "url(images/form_editor_bg_s.png)";
+            }else if(sizeValue == 15){
+                rMenu.style.backgroundImage = "url(images/form_editor_bg_m.png)";
+            }else if(sizeValue == 20){
+                rMenu.style.backgroundImage = "url(images/form_editor_bg_b.png)";
+            }
+
+        }
+	})
+	//formEditorMain.load(formObj2);
+    //dialogType
+
+
+
+});
+
+
+
+</script>
+
+<!--<input type="text" name="colorInput" id="colorInput" />-->
+</body>
+</html>

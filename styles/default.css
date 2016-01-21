@@ -1,0 +1,78 @@
+﻿/*top right bottom left*/
+html {
+    /*overflow: hidden;*/
+    width: 100%;
+    height: 100%;
+}
+
+head, body {
+    /*border: 0px;*/
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: black;
+    font-family: 'Microsoft YaHei';
+    /*overflow-x: hidden;
+    overflow-y: hidden;*/
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    /*border: 0px;*/
+    padding: 0px;
+}
+
+* {
+    -moz-box-sizing: border-box; /*Firefox3.5+*/
+    -webkit-box-sizing: border-box; /*Safari3.2+*/
+    -o-box-sizing: border-box; /*Opera9.6*/
+    -ms-box-sizing: border-box; /*IE8*/
+    box-sizing: border-box;
+    padding: 0px;
+    /*border: 0px*/
+    margin: 0px;
+    /*top: 0px;*/
+    /*right:0px;*/
+    background-repeat: no-repeat;
+}
+
+input {
+    /**border: 0 none;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+.hoverhandle:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 14px !important;
+    height: 14px !important;
+    vertical-align: middle;
+}
+
+.clear {
+    clear: both;
+}
+
+/*ie7在需要出现滚动条的元素上加上这个标签，可以防止子类中有relative出现时不随滚动条滚动的情况*/
+.relative0 {
+    *position: relative;
+    *top: 0px;
+    *right: 0px;
+}
+
+/*easyui 二维表覆盖掉下拉框的问题修复*/
+.layout-panel-north {
+    overflow: visible !important;
+}
+
+    .layout-panel-north .layout-body {
+        overflow: visible !important;
+    }

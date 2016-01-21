@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="changeExample">
+<head>
+</head>
+<body ng-controller="ExampleController">
+    您的姓名:
+    <input type="text" ng-model="yourname" placeholder="World">
+    <hr>
+    <!--如果yourname不为空，显示yourname；否则显示'World'-->
+    Hello {{yourname || 'World'}}!
+    <div>
+        <select name="sel_languages" ng-model="language" ng-change="changelan()">
+            <option value=""></option>
+            <option value="en-us">en-us</option>
+            <option value="zh-ch">zh-ch</option>
+        </select>
+        <input type="text" ng-model="testname" ng-change="change()" id="ng-change-example1" />
+    </div>
+</body>
+<script src="js/angular-1.2.2/angular.min.js"></script>
+<script>
+    angular.module('changeExample', [])
+      .controller('ExampleController', ['$scope', function ($scope) {
+          
+          $scope.testname = "";
+          $scope.change = function () {
+              alert($scope.testname);
+          };
+
+          $scope.language = "zh-ch";
+          $scope.changelan = function () {
+              alert($scope.language);
+          };
+      }]);
+</script>
+</html>
